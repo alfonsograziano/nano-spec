@@ -3,7 +3,18 @@
 > **Status:** Draft
 > **Created:** [Date]
 > **Folder:** [specs/folder-name]
-> **ID:** [optional — ticket ID e.g. PROJ-123, remove this line if not applicable]
+> **ID:** [optional — Jira/Linear/GitHub ticket ID, remove this line if not applicable]
+
+<!--
+INSTRUCTIONS FOR THE AGENT (remove this block before saving the final spec):
+
+- Each spec covers a single user story — one problem, one outcome.
+- The audience is engineers. Keep it tight. A spec that takes 10 minutes to read won't get reviewed. Aim for 2–3 minutes.
+- This template is a starting point, not a rulebook:
+    - Remove sections that don't apply — don't leave them blank or write "N/A"
+    - Add sections if something important doesn't fit (e.g. "Data model", "API contract")
+    - Adjust depth to complexity — a simple task may only need Context + Acceptance Criteria
+-->
 
 ---
 
@@ -13,25 +24,9 @@ _Paste here the initial user input request for future reference_
 
 ---
 
-## Overview
+## Context
 
-_A brief, plain-language description of what this feature or system does and why it matters. 2–4 sentences._
-
----
-
-## Problem Statement
-
-_What problem are we solving? Why does this need to exist? What is broken or missing today?_
-
----
-
-## Goals
-
-_What does success look like? Each goal should be concrete and testable._
-
--
--
--
+_What is this, why does it need to exist, and who is it for? Cover the problem and the purpose in a few sentences. Name the actual roles affected (admin, customer, developer — not just "user")._
 
 ---
 
@@ -44,50 +39,27 @@ _Explicitly list what is out of scope for this spec. This prevents scope creep a
 
 ---
 
-## Users & Stakeholders
+## Acceptance Criteria
 
-_Who is this for? Describe the primary users and any secondary stakeholders who care about the outcome._
+_The observable, binary conditions that define "done". Each one should be independently testable — you should be able to read it and immediately know what test would prove it true or false._
 
-| Role | Description | Primary need |
-|------|-------------|--------------|
-|      |             |              |
-
----
-
-
-## Functional Requirements
-
-_What must the system do? Be specific. Each requirement should be independently verifiable._
-
-1.
-2.
-3.
-
----
-
-## Non-Functional Requirements
-
-_Quality attributes: performance, reliability, security, accessibility, scalability, etc._
-
-- **Performance:**
-- **Security:**
-- **Accessibility:**
-- **Other:**
+- [ ]
+- [ ]
+- [ ]
 
 ---
 
 ## Constraints
 
-_Technical, legal, organizational, or timeline constraints that shape the solution space._
+_Technical, legal, organizational, or timeline constraints that shape the solution space — including quality requirements like performance, security, or accessibility if they're genuinely relevant._
 
--
 -
 
 ---
 
 ## Technical Notes
 
-_Optional. Use this section to capture technical discoveries, constraints, or early implementation thoughts that came up before or during spec writing. This is still the problem space — avoid prescribing a solution — but if you know something technically relevant (e.g., "the existing auth service doesn't support X", "we'll need to use the v2 API"), note it here._
+_Optional. Technical discoveries, known system constraints, or early implementation observations that surfaced before or during spec writing_
 
 -
 
@@ -95,7 +67,7 @@ _Optional. Use this section to capture technical discoveries, constraints, or ea
 
 ## Open Questions
 
-_Unresolved questions that need answers before or during implementation. Each should have an owner and a target date if known._
+_Unresolved questions that could affect implementation._
 
 | # | Question | Owner | Status |
 |---|----------|-------|--------|
@@ -105,7 +77,7 @@ _Unresolved questions that need answers before or during implementation. Each sh
 
 ## Decision Log
 
-_Record of key decisions made during spec refinement, including the rationale._
+_Decisions made during spec refinement, with rationale._
 
 | Decision | Rationale |
 |----------|-----------|

@@ -28,12 +28,11 @@ Before writing anything, you need a clear enough picture to produce a useful spe
 
 Ask multiple targeted questions to uncover:
 
-- **Who** is this for? (users, roles, stakeholders)
+- **Who** is this for? (roles, stakeholders)
 - **Why** does it need to exist? (the pain, the opportunity, the business reason)
-- **What** are the core things it must do? (must-have functionality)
+- **What does "done" look like?** (acceptance criteria — concrete, observable outcomes)
 - **What's out of scope?** (explicit non-goals prevent scope creep)
-- **What constraints exist?** (technical, legal, timeline, budget, platform)
-- **What does success look like?** (acceptance criteria, metrics)
+- **What constraints exist?** (technical, legal, timeline, performance, security, platform)
 - **What's unknown?** (open questions that need answers)
 - **Is there a ticket ID or project reference?** (for folder naming)
 
@@ -71,44 +70,13 @@ Do not ask the user to confirm the folder name unless you are genuinely unsure. 
 
 3. Use a terminal command to copy `assets/SPEC-TEMPLATE.md` into `specs/<folder-name>/SPEC.md`. Then fill it in with everything you learned from the conversation — do not create a second file.
 
-**Filling in the spec well:**
+The template (`assets/SPEC-TEMPLATE.md`) contains inline guidance for each section — read it before filling in the spec. Follow the instructions in the template's comment block at the top, then remove that block before saving.
 
-Each spec covers a single user story — one focused problem, one clear outcome. Don't try to fit multiple user stories into one spec.
-
-The audience is engineers. They read fast, value precision, and don't need hand-holding. Keep the spec tight: every sentence should earn its place. A spec that takes 10 minutes to read will not get reviewed. Aim for something a developer can absorb in 2–3 minutes.
-
-The template is a starting point, not a rulebook. You are expected to:
-- **Remove sections** that don't apply — if there are no open questions, delete that section entirely rather than leaving it blank or writing "N/A"
-- **Add sections** if something important doesn't fit the template (e.g., a "Data model" section, or "API contract")
-- **Adjust depth** to match the complexity — a simple task might only need Overview + Functional Requirements; a complex one might need everything
-
-The header supports an optional `ID` field for cross-referencing external trackers (Jira, Linear, GitHub issues). If the user provided a ticket ID, include it. Otherwise, omit the field.
-
-```md
-# Spec: [Title]
-
-> **Status:** Draft
-> **ID:** PROJ-123        ← only include if the user provided one
-> **Created:** [Date]
-> **Folder:** specs/folder-name
-```
-
-Section guidance (only include what's relevant):
-
-- **User input**: Paste the user's original request verbatim. This anchors the spec to what was actually asked.
-- **Overview**: 2–4 sentences. What is it and why does it matter?
-- **Problem statement**: The pain, made concrete. Why now?
-- **Goals**: Testable outcomes. "Users can export invoices as PDF" beats "support PDF export."
-- **Non-goals**: Only list things that might genuinely be assumed in-scope. Skip the obvious.
-- **Users & stakeholders**: Name the actual roles — admin, customer, developer — not just "user."
-- **Functional requirements**: Numbered, each independently verifiable. No fluff.
-- **Non-functional requirements**: Only include if genuinely relevant — skip if there's nothing real to say.
-- **Constraints**: Fixed things — platform, deadline, existing system dependencies.
-- **Technical notes**: Optional. If the user did technical discovery beforehand, or mentioned relevant technical constraints (e.g., "the current API doesn't support pagination", "we're locked to Postgres"), capture it here. This is not about prescribing a solution — it's about surfacing facts that will matter during planning or implementation. Leave out if there's nothing technically relevant yet.
-- **Open questions**: Unresolved decisions that could affect implementation. If there are none, remove the section.
-- **Decision log**: Decisions made during the conversation. Leave it out if nothing was decided yet.
-
-Replace the `[Date]` placeholder with today's date. Replace `[specs/folder-name]` with the actual path.
+4. Before saving the final file, do a self-review pass:
+   - Remove all placeholder instructions — italic hints like `_What is this, why does it need to exist..._`, the HTML comment block at the top, and any other template scaffolding that isn't real content
+   - Remove sections that ended up empty or irrelevant
+   - Check that every acceptance criterion is binary and testable, not vague
+   - Check that the spec reads as a clean document an engineer can pick up and act on — no ghost instructions, no leftover template noise
 
 ---
 

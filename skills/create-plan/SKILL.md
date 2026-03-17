@@ -52,61 +52,63 @@ Explore to understand:
 
 When multiple independent areas need investigation (e.g., backend + frontend + database), use subagents via the Agent tool to explore them in parallel. This saves time and keeps the main context clean.
 
-After exploration, you should be able to name specific real files — not hypothetical ones. If you can't find where something lives, say so in Technical Notes as an open question rather than inventing a path.
+After exploration, you should be able to name specific real files — not hypothetical ones. If you can't find where something lives, record it as an open question — don't invent a path.
 
 ---
 
 ## Step 4: Generate the plan
 
-Read the template from `assets/PLAN-TEMPLATE.md` in this skill's directory.
+1. Read the template from `assets/PLAN-TEMPLATE.md` in this skill's directory. This tells you the structure and contains inline guidance for each section.
 
-Create `specs/<folder-name>/PLAN.md` (same folder as the SPEC.md).
+2. Use a terminal command to copy `assets/PLAN-TEMPLATE.md` into `specs/<folder-name>/PLAN.md` (same folder as the SPEC.md). Then fill it in with everything you learned from exploration — do not create a second file.
 
-Fill in the template:
+The template contains inline guidance in a comment block at the top — read it before filling in the plan. Follow those instructions, then remove the comment block before saving.
 
-### Approach
-2–5 sentences. Describe the specific mechanism — not "add an API endpoint" but "add a `POST /api/users/preferences` handler in `src/api/` following the pattern in `src/api/users.ts`." Be concrete enough that a developer could read this and know what to do, even if the task list disappeared.
-
-### Trade-offs
-Only include if real choices existed. Each bullet names both options and explains why one was chosen. If the approach was obvious and there was only one reasonable way to do it, skip this section entirely rather than inventing fake trade-offs.
-
-### Tasks
-A markdown checkbox list ordered by dependency. Rules for each task:
-- **Atomic**: completable in a single agent session (create one file, add one endpoint, write one migration)
-- **Named**: references the specific file or function being changed
-- **Done when**: ends with a `**Done when:**` line — a concrete, binary check (e.g., "the migration runs without error", "the test passes", "the endpoint returns 200 for authenticated requests")
-
-Group into phases when there's a natural division (e.g., Phase 1: Database, Phase 2: API, Phase 3: Frontend). Don't create phases just to have structure.
-
-### Technical Notes
-This section is primarily for the implementation agent, not the human reviewer. Include:
-- A table of files to create or modify, with a description of what changes
-- Key variable names, function signatures, config keys, or environment variables found during exploration
-- Pattern references with file paths and line numbers (e.g., "follow the auth middleware pattern in `src/middleware/auth.ts:34`")
-- CLI commands needed (migrations, codegen, build steps)
-- Anything a developer would want to know before opening the first file
-
-**Before saving**, do a self-review pass:
-- Remove all placeholder instructions and template scaffolding (italics, HTML comments)
-- Verify every file path in Technical Notes is either a real file you found, or is labeled as "new file"
-- Confirm every task has a binary Done-when check
-- Confirm the human-readable part (Approach + Trade-offs + Tasks) fits in under 5 minutes of reading
-- Remove any section that ended up empty
+3. Before saving the final file, do a self-review pass:
+   - Remove all placeholder instructions — italic hints, the HTML comment block, and any other template scaffolding that isn't real content
+   - Remove sections that ended up empty — **except Open Questions**, which should stay even if some remain unanswered
+   - Verify every file path in Technical Notes is either a real file you found or is labeled "new file"
+   - Confirm every task has a binary `Done when:` check
+   - Check that the plan reads as a clean document an engineer can pick up and act on — no ghost instructions, no leftover template noise
+   - Confirm the human-readable part (Approach + Trade-offs + Tasks + Open Questions) fits under 5 minutes of reading
 
 ---
 
 ## Step 5: Tell the user
 
-Once the plan is written:
+Once the plan is written, surface any open questions directly in your message — don't just say "see the plan":
 
 > The plan has been created at `specs/<folder-name>/PLAN.md`.
 >
-> Please review it before we move forward — especially the Tasks and Technical Notes. Let me know if the approach is wrong for your architecture, if any files are missing, or if the sequencing needs to change.
+> Please review it before we move forward — especially the Tasks and Technical Notes.
 >
-> **Suggested next step:** [one sentence — if the plan is small and low-risk, suggest implementing directly; if it touches critical paths or has complex dependencies, suggest a quick review pass first]
+> [If there are open questions, list them here as numbered questions, e.g.:]
+> **I have a few questions that would sharpen the plan:**
+> - **Q1:** [question] — this affects [what it blocks]
+> - **Q2:** [question] — without this, [what's uncertain]
 >
-> When you're ready to implement, reply with `[I]` to begin execution.
+> [If no open questions:]
+> **Suggested next step:** [one sentence — small/low-risk: suggest implementing; touches critical paths: suggest review sync first]
+>
+> You can reply with `[I]` to begin implementation now — the plan is valid as-is — but the parts that depend on the open questions above may need revision once answered.
 
-Then stop. Do not write any implementation code until the user approves the plan.
+Then stop and wait. Update the plan when the user answers (see Step 6).
 
 > ⚠️ **Context tip:** If you've been in this conversation a while, consider opening a fresh chat before implementing. Long conversations accumulate noise. Just mention the plan path and continue from there.
+
+---
+
+## Step 6: Handle user answers to open questions
+
+When the user answers one or more open questions:
+
+1. **Verify if possible** — if the answer points to a file or location, read it to confirm. Trust what the user says, but verify when you can. If verification reveals something unexpected, mention it.
+
+2. **Update the plan** — revise the Approach, Tasks, or Technical Notes as needed based on what you learned. Remove resolved questions from the Open Questions section.
+
+3. **Tell the user what changed** — briefly summarize what was updated in the plan (e.g., "Updated the middleware mount point in Task 2 and Technical Notes based on your answer about `src/server.ts`").
+
+4. **If all questions are resolved**, suggest implementation:
+   > The plan is now fully resolved. Reply with `[I]` to begin implementation.
+
+5. **If questions remain**, list them again so the user can continue answering at their own pace. A plan with open questions is still a valid plan, and if the user want it can proceed to the implementation.

@@ -1,5 +1,5 @@
 ---
-name: spec-creator
+name: create-spec
 description: Create a SPEC.md file for a new feature, product, or system using the Spec-Driven Development (SDD) approach. The spec works in the problem space — it clarifies the "what", not the "how". Use this skill whenever the user wants to write a spec, define requirements, capture what needs to be built, create a specification document, or start the SDD workflow. Trigger even if the user says things like "let's spec this out", "I want to define what we're building", "help me think through requirements", or "let's write a spec for X".
 ---
 
@@ -82,14 +82,23 @@ The template (`assets/SPEC-TEMPLATE.md`) contains inline guidance for each secti
 
 ## Step 5: Tell the user
 
-Once the spec is written, say:
+Once the spec is written, do a quick assessment of the change's complexity:
+
+- **Trivial/straightforward**: a small, well-scoped change with clear acceptance criteria, no significant unknowns, no risky side effects, touches a limited surface area. A formal plan adds little value here.
+- **Non-trivial**: multiple moving parts, unclear dependencies, architectural decisions to make, risk of breaking existing behavior, or the spec leaves open questions about approach. A plan is worth it.
+
+Then tell the user:
 
 > The spec has been created at `specs/<folder-name>/SPEC.md` and is ready for review.
 >
-> Please review it before we move forward — don't proceed to the next steps until you're happy with it. Let me know if anything is missing, unclear, or needs to change. We can keep refining it here together.
+> Please review it before we move forward. Let me know if anything is missing, unclear, or needs to change — we can keep refining it here together.
 >
-> When the spec is approved, there are two possible next steps:
-> - **Plan** — break the spec down into a technical plan before touching any code
-> - **Implement** — go straight to implementation based on the spec
+> **Suggested next step:** [one sentence based on your assessment — trivial: suggest implement, non-trivial: suggest plan]
+>
+> When you're ready, reply with:
+> - `[P]` to create an implementation plan
+> - `[I]` to implement directly
 
-Then stop and wait for the user to review. Do not proceed, suggest implementation details, or start planning until the user explicitly says the spec is ready.
+> ⚠️ **Context tip:** If your agent is showing that you've used more than ~50% of the available context window, it's worth opening a fresh chat before proceeding. Long conversations accumulate noise that degrades output quality. In the new chat, just mention the spec you want to plan or implement by name and continue from there.
+
+Then stop and wait. Do not proceed until the user explicitly approves the spec and picks a next step.

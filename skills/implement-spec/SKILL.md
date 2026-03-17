@@ -11,6 +11,19 @@ The skill works from `specs/<folder-name>/` and writes to the actual project cod
 
 ---
 
+## Step 0: Ensure there's a spec to implement
+
+Implementation must always be grounded in an existing spec. If the user invoked this skill without referencing an existing spec — for example, by describing a feature idea directly or asking you to "implement X" where X is a new concept — do not proceed. Instead, respond:
+
+> "I can only implement changes that are described in a pre-defined spec. Do you want me to load an existing spec or create a new one?"
+
+Wait for the user's answer:
+
+- If they provide a spec folder name (e.g., `user-auth`), proceed to Step 1 using that name.
+- If they want to create a new spec, stop this skill and invoke the `create-spec` skill. Once the spec exists, optionally run `create-plan` to produce a PLAN.md, then resume from Step 1.
+
+---
+
 ## Step 1: Find the spec folder
 
 Check if the user provided a spec folder name or path (e.g., `user-auth` or `specs/user-auth`).

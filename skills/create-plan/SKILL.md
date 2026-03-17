@@ -13,6 +13,19 @@ The output is saved at `specs/<folder-name>/PLAN.md`, alongside the spec it plan
 
 ---
 
+## Step 0: Ensure there's a spec to plan
+
+A plan must be grounded in a spec. If the user invoked this skill without referencing an existing spec — for example, by describing a feature idea directly or asking you to "plan X" where X is a new concept — do not proceed. Instead, respond:
+
+> "I can only plan changes that are described in a pre-defined spec. Do you want me to load an existing spec or create a new one?"
+
+Wait for the user's answer:
+
+- If they provide a spec folder name (e.g., `user-auth`), proceed to Step 1 using that name.
+- If they want to create a new spec, stop this skill and invoke the `create-spec` skill to run the spec creation workflow. Once the spec is created, resume from Step 1 with the newly created spec folder.
+
+---
+
 ## Step 1: Find the spec
 
 Check if the user provided a spec path or the name of the spec folder (e.g., `specs/user-auth/SPEC.md` or `user-auth`).

@@ -59,6 +59,12 @@ Plain Markdown. Nothing to install, nothing to configure beyond the skills thems
 - The agent pauses between phases. You decide when to move forward.
 - No lock-in. The skills standard is open, works with any compatible agent.
 
+## A learning tool
+
+If you want to learn the basics of Spec-Driven Development, nano-spec is a good place to start. Think of it as the "hello world" of SDD — small enough to read in a few minutes, but complete enough to show how specs, plans, and implementation fit together.
+
+Work through a feature end-to-end with the three skills and you'll have a concrete feel for the SDD loop before reading a single page of theory.
+
 ## The book
 
 I'm writing a book on Spec-Driven Development with O'Reilly. The first Early Release chapters are coming out soon.

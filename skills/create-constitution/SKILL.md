@@ -87,11 +87,11 @@ Wait for the user's answers before writing the constitution. Do not skip this st
 
 ## Step 3: Create the constitution
 
-1. Read the template from `assets/CONSTITUTION-TEMPLATE.md` in this skill's directory.
+1. Read `assets/CONSTITUTION-TEMPLATE.md` from this skill's directory.
 
 2. Create the `specs/` directory if it doesn't already exist.
 
-3. Copy `assets/CONSTITUTION-TEMPLATE.md` into `specs/CONSTITUTION.md` — use `cp` on Unix/Mac, `copy` on Windows, or any equivalent terminal command available. If no terminal is available, read the template and recreate the file faithfully using your file write tool, preserving the structure exactly.
+3. Write the template contents to `specs/CONSTITUTION.md`, preserving the structure exactly.
 
 4. Fill in each section with what you learned. Be concise — the constitution should take under 2 minutes to read. If a section has nothing meaningful to say, remove it entirely.
 

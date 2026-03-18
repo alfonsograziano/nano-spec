@@ -69,7 +69,7 @@ If the plan has open questions but none are blocking (the tasks still make sense
 
 ## Step 4: Set up IMPLEMENTATION-NOTES.md
 
-Copy `assets/IMPLEMENTATION-NOTES-TEMPLATE.md` in this skill's directory into `specs/<folder-name>/IMPLEMENTATION-NOTES.md` **only if the file doesn't already exist** — use `cp` on Unix/Mac, `copy` on Windows, or any equivalent terminal command available. If no terminal is available, read the template and recreate the file faithfully using your file write tool, preserving the structure exactly. If the file already exists, open it and prepare to append.
+Read `assets/IMPLEMENTATION-NOTES-TEMPLATE.md` from this skill's directory. Write the contents to `specs/<folder-name>/IMPLEMENTATION-NOTES.md` **only if the file doesn't already exist**, preserving the structure exactly. If the file already exists, open it and prepare to append.
 
 You'll populate this file throughout implementation. Don't wait until the end — record notes as you encounter them.
 

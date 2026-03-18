@@ -67,6 +67,8 @@ When multiple independent areas need investigation (e.g., backend + frontend + d
 
 After exploration, you should be able to name specific real files — not hypothetical ones. If you can't find where something lives, record it as an open question — don't invent a path.
 
+If you discover gotchas, surprises, or non-obvious constraints during exploration that go beyond pure implementation reference, add them to the Technical Notes section under a clearly labeled `### Planning Observations` subsection.
+
 ---
 
 ## Step 4: Generate the plan

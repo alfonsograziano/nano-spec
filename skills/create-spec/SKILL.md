@@ -19,18 +19,33 @@ If it doesn't exist, proceed — you don't need it to create a spec.
 
 ---
 
-## Step 1: Get the user's query
+## Step 1: Get familiar with the codebase
+
+Do a quick, read-only scan of the project to build context — like a senior engineer glancing at the codebase before writing a story. This is not a deep exploration (that's what `create-plan` does), just enough to understand what's already there.
+
+- Read the README if one exists.
+- Look at the top-level file and folder structure to understand the project layout.
+- If the user's request touches a specific area, check whether something similar already exists (e.g., an existing endpoint, component, or module that does something close).
+- Note any relevant terminology, patterns, or naming conventions you spot.
+
+If the Agent tool is available, use a subagent for this so it doesn't clutter the main conversation. Keep it fast — spend a minute orienting, not ten minutes exploring.
+
+The goal is to ask better questions in Step 3 and avoid specifying something that already exists or conflicts with what's already built.
+
+---
+
+## Step 2: Get the user's query
 
 Check if the user provided a high-level description of what they want to build in their message.
 
-- If yes, move to Step 2.
+- If yes, move to Step 3.
 - If no, ask them: "What are you looking to build or specify? Give me a rough idea — even a sentence or two is enough to get started."
 
 Wait for their response before proceeding.
 
 ---
 
-## Step 2: Ask clarifying questions
+## Step 3: Ask clarifying questions
 
 Before writing anything, you need a clear enough picture to produce a useful spec. A vague spec is worse than no spec — it gives false confidence while hiding the real unknowns.
 
@@ -56,7 +71,7 @@ If something is ambiguous, say so and ask. It's better to surface uncertainty no
 
 ---
 
-## Step 3: Determine the folder name
+## Step 4: Determine the folder name
 
 Create a kebab-case folder name that reflects the topic. Rules:
 
@@ -70,7 +85,7 @@ Do not ask the user to confirm the folder name unless you are genuinely unsure. 
 
 ---
 
-## Step 4: Create the spec
+## Step 5: Create the spec
 
 1. Read the template from `assets/SPEC-TEMPLATE.md` in this skill's directory. This tells you the structure you need to fill in.
 
@@ -88,7 +103,7 @@ The template (`assets/SPEC-TEMPLATE.md`) contains inline guidance for each secti
 
 ---
 
-## Step 5: Tell the user
+## Step 6: Tell the user
 
 Once the spec is written, do a quick assessment of the change's complexity:
 

@@ -8,7 +8,7 @@ INSTRUCTIONS FOR THE AGENT (remove this block before saving the final plan):
 
 - Approach: what and how, specifically. 2–5 sentences. No vague summaries — name the files, functions, and mechanisms. If something couldn't be determined, say so and point to Open Questions.
 - Trade-offs: only include if real choices were made. Name both options and explain the decision. Skip the section if the approach was obvious.
-- Tasks: atomic, ordered by dependency, each with a "Done when:" binary check. Reference the specific file or function being changed. If a task is blocked on an open question, note "⚠️ Blocked on Q1."
+- Tasks: atomic, ordered by dependency, each with a "Done when:" binary check. Reference the specific file or function being changed. Tag each task with the AC numbers it covers (e.g. "AC 1, 3"). If a task is blocked on an open question, note "⚠️ Blocked on Q1."
 - Open Questions: things you couldn't determine during exploration. Number them Q1, Q2... State what each question blocks. Remove once resolved. Keep this section even if the plan is otherwise complete.
 - Technical Notes: for the implementation agent. Every file path must be real (confirmed by exploration) or explicitly labeled "new file".
 - Remove sections that don't apply — except Open Questions, which should remain if any are unanswered.
@@ -33,10 +33,10 @@ _List only real choices made. Format: option A vs option B — chose A because [
 
 ## Tasks
 
-_Ordered checkbox list. Each task is atomic, named (references the specific file/function), and ends with a **Done when:** binary check. Tasks blocked on an open question are marked ⚠️._
+_Ordered checkbox list. Each task is atomic, named (references the specific file/function), tagged with the acceptance criteria it covers, and ends with a **Done when:** binary check. Tasks blocked on an open question are marked ⚠️._
 
-- [ ] [Task description referencing specific file/function]. **Done when:** [observable, binary check]
-- [ ] [Task description]. **Done when:** [observable, binary check]
+- [ ] [Task description referencing specific file/function] **(AC 1, 3)**. **Done when:** [observable, binary check]
+- [ ] [Task description] **(AC 2)**. **Done when:** [observable, binary check]
 
 ---
 

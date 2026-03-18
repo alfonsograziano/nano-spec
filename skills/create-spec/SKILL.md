@@ -56,7 +56,7 @@ Create a kebab-case folder name that reflects the topic. Rules:
 - If the user mentioned a ticket ID or reference number, prepend it: `PROJ-123-user-authentication`
 - If the user specified an exact folder name they want, use that as-is
 - Keep it short but recognizable — someone should understand what this spec is about from the folder name alone
-- Each spec should have a unique folder name. If the user wants to spec something that already has a spec, ask if they want to update the existing one instead of creating a new one.
+- Each spec should have a unique folder name. If the user wants to spec something that already has a spec, ask if they want to update the existing one instead of creating a new one. If yes, read the existing `SPEC.md` and continue the conversation to refine it — no new file needed.
 
 Do not ask the user to confirm the folder name unless you are genuinely unsure. Make a reasonable choice and proceed.
 

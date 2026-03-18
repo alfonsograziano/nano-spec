@@ -150,16 +150,23 @@ Run these after every implementation:
 
 ---
 
-## Step 8: Final IMPLEMENTATION-NOTES.md pass
+## Step 8: Verify acceptance criteria
+
+Before finishing, re-read the acceptance criteria in `SPEC.md` and go through them one by one. For each criterion, determine whether the implementation actually satisfies it — not just whether the build passes. Mark each as met or unmet and note the reason for any unmet ones. This becomes the AC status block in Step 9.
+
+---
+
+## Step 9: Final IMPLEMENTATION-NOTES.md pass
 
 Before finishing, review IMPLEMENTATION-NOTES.md:
 - Remove any empty sections from the template
 - Make sure the "Sanity Checks" section reflects actual results from Step 7
+- Make sure the "Remaining Work" section reflects any unmet acceptance criteria from Step 8
 - Ensure the Summary section is filled in with a concise account of what was built
 
 ---
 
-## Step 9: Tell the user
+## Step 10: Tell the user
 
 Before reporting back, update the status metadata in the spec folder:
 - In `specs/<folder-name>/SPEC.md`, change `**Status:** Draft` to `**Status:** Complete`

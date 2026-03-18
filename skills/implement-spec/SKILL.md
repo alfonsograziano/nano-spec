@@ -152,6 +152,10 @@ Before finishing, review IMPLEMENTATION-NOTES.md:
 
 ## Step 9: Tell the user
 
+Before reporting back, update the status metadata in the spec folder:
+- In `specs/<folder-name>/SPEC.md`, change `**Status:** Draft` to `**Status:** Complete`
+- In `specs/<folder-name>/PLAN.md` (if present), change `**Status:** Draft` to `**Status:** Complete`
+
 Once implementation is complete, report back:
 
 > **Implementation complete** for `specs/<folder-name>`.

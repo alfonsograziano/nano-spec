@@ -65,10 +65,7 @@ _Results from type checking, linting, build, and tests. Note any pre-existing fa
 
 | Check | Result | Notes |
 |-------|--------|-------|
-| Type check | — | |
-| Lint | — | |
-| Build | — | |
-| Tests | — | |
+| [e.g. Type check] | — | |
 
 ---
 

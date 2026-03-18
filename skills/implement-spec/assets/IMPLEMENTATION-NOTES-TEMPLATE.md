@@ -1,7 +1,5 @@
 # Implementation Notes: [Title]
 
-> **Spec:** [specs/folder-name/SPEC.md]
-> **Plan:** [specs/folder-name/PLAN.md — or "No plan, implemented from spec directly"]
 > **Date:** [Date]
 
 <!--

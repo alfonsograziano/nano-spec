@@ -1,7 +1,6 @@
 # Plan: [Title]
 
 > **Status:** Draft
-> **Spec:** [specs/folder-name/SPEC.md]
 > **Created:** [Date]
 
 <!--

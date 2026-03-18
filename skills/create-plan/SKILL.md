@@ -87,7 +87,9 @@ If you discover gotchas, surprises, or non-obvious constraints during exploratio
 
 The template contains inline guidance in a comment block at the top — read it before filling in the plan. Follow those instructions, then remove the comment block before saving.
 
-3. Before saving the final file, do a self-review pass:
+3. Cross-check tasks against acceptance criteria: go through every acceptance criterion in SPEC.md and verify that at least one task in the plan directly addresses it. If an AC is not covered by any task, either add a task for it or record it as an open question explaining why it was left out.
+
+4. Before saving the final file, do a self-review pass:
    - Remove all placeholder instructions — italic hints, the HTML comment block, and any other template scaffolding that isn't real content
    - Remove sections that ended up empty — **except Open Questions**, which should stay even if some remain unanswered
    - Verify every file path in Technical Notes is either a real file you found or is labeled "new file"

@@ -69,9 +69,9 @@ _Optional. Technical discoveries, known system constraints, or early implementat
 
 _Unresolved questions that could affect implementation._
 
-| # | Question | Owner | Status |
-|---|----------|-------|--------|
-| 1 |          |       | Open   |
+| # | Question | Affects | Owner | Status |
+|---|----------|---------|-------|--------|
+| 1 |          |         |       | Open   |
 
 ---
 

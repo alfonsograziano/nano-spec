@@ -44,9 +44,9 @@ _Ordered checkbox list. Each task is atomic, named (references the specific file
 
 _Things that couldn't be determined during exploration. Each question is numbered, specific, and states what it affects. Remove individual questions once resolved. Remove this section entirely only if everything was answered._
 
-| # | Question | Affects |
-|---|----------|---------|
-| Q1 | [Specific question — e.g. "Where is the Express app initialized: src/app.ts, src/index.ts, or src/server.ts?"] | [What this blocks — e.g. "Task 3: where to mount the middleware"] |
+| # | Question | Affects | Owner | Status |
+|---|----------|---------|-------|--------|
+| Q1 | [Specific question — e.g. "Where is the Express app initialized: src/app.ts, src/index.ts, or src/server.ts?"] | [What this blocks — e.g. "Task 3: where to mount the middleware"] | | Open |
 
 ---
 

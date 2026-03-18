@@ -75,17 +75,20 @@ You'll populate this file throughout implementation. Don't wait until the end �
 
 ## Step 5: Implement the tasks
 
-Work through the implementation now. If there's a PLAN.md with a task list, follow it in order. For each task:
+**Before writing any code**, scan the task list and decide on execution strategy:
+
+- Identify groups of tasks that are fully independent — no shared files, no ordering dependency between them.
+- If independent groups exist and the Agent tool is available, plan to spawn them as parallel subagents. Each subagent should report back its completed task IDs and any notes; you then check them off in PLAN.md and merge notes into IMPLEMENTATION-NOTES.md.
+- Tasks that share files or depend on each other's output must run sequentially.
+- If there's no PLAN.md, implement in a logical order — dependencies first, then the main functionality, then validation/edge cases.
+
+Then work through the tasks. For each task:
 
 1. **Implement it** — make the actual code changes. Follow the conventions you see in the existing codebase (naming, structure, patterns). Reference Technical Notes from the plan when they name specific files or patterns to follow.
 
 2. **Check it off** — once done, update `PLAN.md` by marking the task's checkbox: `- [ ]` → `- [x]`. Do this immediately after completing each task, not in a batch at the end.
 
 3. **Record anything interesting** — if you encountered something non-obvious, deviated from the plan, hit a snag, made a judgment call, or found something the plan missed, write a note in IMPLEMENTATION-NOTES.md right away (see guidelines in Step 6).
-
-If there's no PLAN.md, implement the spec requirements in a logical order — dependencies first, then the main functionality, then validation/edge cases.
-
-**Parallelism:** Before starting, scan the task list for groups of tasks that are fully independent — no shared files, no ordering dependency between them. If the Agent tool is available to you, spawn those groups as parallel subagents to speed up implementation. Tasks that share files or depend on each other's output must still run sequentially. Each subagent should report back its completed task IDs and any notes; you then check them off in PLAN.md and merge notes into IMPLEMENTATION-NOTES.md.
 
 **When a task is impossible or blocked:** If a task cannot be completed (a dependency is missing, a required file doesn't exist, the approach turns out to be wrong), do not guess or force it. Instead:
 1. Record why it's impossible in IMPLEMENTATION-NOTES.md under "Remaining Work", with as much detail as you have.

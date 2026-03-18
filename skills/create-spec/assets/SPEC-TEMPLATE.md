@@ -43,9 +43,9 @@ _Explicitly list what is out of scope for this spec. This prevents scope creep a
 
 _The observable, binary conditions that define "done". Each one should be independently testable — you should be able to read it and immediately know what test would prove it true or false._
 
-- [ ]
-- [ ]
-- [ ]
+-
+-
+-
 
 ---
 

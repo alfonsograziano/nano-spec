@@ -49,7 +49,12 @@ Also check for `specs/CONSTITUTION.md`. If it exists, read it — it contains th
 If `SPEC.md` is missing, stop and tell the user:
 > "I couldn't find `specs/<folder-name>/SPEC.md`. Please check the folder name and try again."
 
-If `PLAN.md` is missing, note this — you'll implement based on the spec directly, using your own judgment on ordering and approach.
+If `PLAN.md` is missing, auto-generate one before implementing:
+
+1. If the Agent tool is available, spawn a subagent to run the `create-plan` skill against this spec. Otherwise, run the `create-plan` skill yourself inline. Either way, do **not** ask the user any questions — make your best judgment on any ambiguities and record them as open questions in the plan.
+2. The subagent writes the plan to `specs/<folder-name>/PLAN.md` with `**Status:** Auto-generated` (instead of `Draft`).
+3. Once the subagent returns, read the generated `PLAN.md` and continue to Step 3 as normal.
+4. In IMPLEMENTATION-NOTES.md, record under "Deviations from the Plan" that the plan was auto-generated and not reviewed by a human.
 
 ---
 
@@ -82,7 +87,7 @@ You'll populate this file throughout implementation. Don't wait until the end �
 - Identify groups of tasks that are fully independent — no shared files, no ordering dependency between them.
 - If independent groups exist and the Agent tool is available, plan to spawn them as parallel subagents. Each subagent should report back its completed task IDs and any notes; you then check them off in PLAN.md and merge notes into IMPLEMENTATION-NOTES.md.
 - Tasks that share files or depend on each other's output must run sequentially.
-- If there's no PLAN.md, implement in a logical order — dependencies first, then the main functionality, then validation/edge cases.
+- At this point a PLAN.md always exists (either provided or auto-generated in Step 2). Use its task list as the execution plan.
 
 Then work through the tasks. For each task:
 
@@ -152,7 +157,7 @@ Before finishing, review IMPLEMENTATION-NOTES.md:
 
 Before reporting back, update the status metadata in the spec folder:
 - In `specs/<folder-name>/SPEC.md`, change `**Status:** Draft` to `**Status:** Complete`
-- In `specs/<folder-name>/PLAN.md` (if present), change `**Status:** Draft` to `**Status:** Complete`
+- In `specs/<folder-name>/PLAN.md`, change `**Status:** Draft` (or `**Status:** Auto-generated`) to `**Status:** Complete`
 
 Once implementation is complete, report back:
 

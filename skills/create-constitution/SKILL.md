@@ -1,6 +1,6 @@
 ---
 name: create-constitution
-description: Create or update a CONSTITUTION.md file in the specs/ folder by scanning the project. The constitution captures project-wide context that all other nano-spec skills rely on: tech stack, sanity check commands, coding conventions, key files, and hard rules. Use when the user wants to set up nano-spec for a new project, initialize the constitution, or keep it up to date. Trigger when the user says things like "create the constitution", "set up the project constitution", "initialize nano-spec", or "update the constitution".
+description: Create or update a CONSTITUTION.md file in the specs/ folder by scanning the project. The constitution captures project-wide context that all other nano-spec skills rely on things like tech stack, sanity check commands, coding conventions, key files, and hard rules. Use when the user wants to set up nano-spec for a new project, initialize the constitution, or keep it up to date. Trigger when the user says things like "create the constitution", "set up the project constitution", "initialize nano-spec", or "update the constitution".
 ---
 
 # Constitution Creator

@@ -11,6 +11,14 @@ The output is a filled-in spec file saved under `specs/<folder-name>/SPEC.md` in
 
 ---
 
+## Step 0: Read the constitution
+
+Check if `specs/CONSTITUTION.md` exists. If it does, read it before doing anything else. It contains project-wide context (tech stack, conventions, rules) that will help you ask better questions and avoid asking things already captured there.
+
+If it doesn't exist, proceed — you don't need it to create a spec.
+
+---
+
 ## Step 1: Get the user's query
 
 Check if the user provided a high-level description of what they want to build in their message.

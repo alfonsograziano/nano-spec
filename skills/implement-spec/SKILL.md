@@ -44,6 +44,8 @@ Read everything in `specs/<folder-name>/`:
 - `PLAN.md` — the implementation plan and task list (use this if present; it's the source of truth for ordering and approach)
 - `IMPLEMENTATION-NOTES.md` — if it already exists, append to it rather than overwriting
 
+Also check for `specs/CONSTITUTION.md`. If it exists, read it — it contains the canonical sanity checks, conventions, key files, and rules for this project. Use it throughout implementation.
+
 If `SPEC.md` is missing, stop and tell the user:
 > "I couldn't find `specs/<folder-name>/SPEC.md`. Please check the folder name and try again."
 
@@ -122,31 +124,11 @@ The purpose of this file is to give the human reviewer context that isn't visibl
 
 ## Step 7: Run sanity checks
 
-Once all tasks are implemented, validate the project. The right checks depend entirely on the project — don't assume a fixed set.
+**If `specs/CONSTITUTION.md` exists and has a Sanity Checks section**, run exactly the commands listed there, in order. Stop and fix failures before proceeding. If a failure is in code you didn't write and is pre-existing, note it in IMPLEMENTATION-NOTES.md under "Pre-existing Issues" and continue.
 
-**First: check if sanity checks are already defined.** Look for a dedicated file in the project — something like `CHECKS.md`, `SANITY_CHECKS.md`, `specs/CHECKS.md`, or a `checks` section in a project readme or CLAUDE.md. If such a file exists, run exactly what it says and skip the discovery step below.
+**If there is no constitution, skip this step entirely.** Do not attempt to discover checks on your own. In your final message to the user (Step 10), note that sanity checks were not run and explain why:
 
-**If no checks file exists, discover what's available** by reading `package.json` scripts (or other configuration files depending on the technology) and looking for config files:
-
-- **Type checking**: `tsconfig.json` → `tsc --noEmit` or a `typecheck` script
-- **Linting**: `.eslintrc*`, `eslint.config.*`, `.biome.json`, `.oxlintrc*` → the configured linter
-- **Build/compile**: a `build` script in `package.json`
-- **Tests**: `vitest.config.*`, `jest.config.*`, or a `test` script in `package.json`
-- **Other**: scripts named `check`, `validate`, `lint:ci`, `ci` — run what seems relevant
-
-Run what you find in order (if available and applicable): type check → lint → build → test. Stop and fix failures before proceeding. If a failure is in code you didn't write and is pre-existing, note it in IMPLEMENTATION-NOTES.md under "Pre-existing Issues" and continue.
-
-**If no checks file was found**, mention it in your final message to the user — tell them what you discovered and ran, and suggest they create a `CHECKS.md` at the project root (or in `specs/`) listing the commands to run. This makes future implementations faster and ensures nothing gets missed. A minimal example:
-
-```markdown
-# Sanity Checks
-
-Run these after every implementation:
-
-- `npm run typecheck` — TypeScript type checking
-- `npm run lint` — ESLint
-- `npm test` — unit tests
-```
+> ⚠️ **Sanity checks skipped** — no `specs/CONSTITUTION.md` was found. Run your project's checks manually, then consider running `/create-constitution` to set one up so future implementations can run them automatically.
 
 ---
 
@@ -194,5 +176,9 @@ If any tasks were skipped because they were impossible, list them explicitly and
 > - **[Task name]** — [blocked by the above]
 >
 > Please let me know how to proceed on these before I continue.
+
+If during implementation you discovered something worth adding to `specs/CONSTITUTION.md` — a new convention that emerged, a rule that proved important, a key file that wasn't documented — mention it in one sentence and ask the user if they'd like you to add it:
+
+> **Constitution update:** I noticed [observation] during implementation. Would you like me to add this to `specs/CONSTITUTION.md`?
 
 Then stop and wait. Do not make additional changes unless the user asks.

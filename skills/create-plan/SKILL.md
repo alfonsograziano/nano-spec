@@ -13,7 +13,15 @@ The output is saved at `specs/<folder-name>/PLAN.md`, alongside the spec it plan
 
 ---
 
-## Step 0: Ensure there's a spec to plan
+## Step 0: Read the constitution
+
+Check if `specs/CONSTITUTION.md` exists. If it does, read it before doing anything else. It contains the canonical sanity checks, coding conventions, key files, and hard rules for this project — use it to guide your codebase exploration and to pre-populate the Technical Notes in the plan.
+
+If it doesn't exist, proceed — you'll discover what you need during exploration.
+
+---
+
+## Step 1: Ensure there's a spec to plan
 
 A plan must be grounded in a spec. If the user invoked this skill without referencing an existing spec — for example, by describing a feature idea directly or asking you to "plan X" where X is a new concept — do not proceed. Instead, respond:
 
@@ -21,12 +29,12 @@ A plan must be grounded in a spec. If the user invoked this skill without refere
 
 Wait for the user's answer:
 
-- If they provide a spec folder name (e.g., `user-auth`), proceed to Step 1 using that name.
-- If they want to create a new spec, stop this skill and invoke the `create-spec` skill to run the spec creation workflow. Once the spec is created, resume from Step 1 with the newly created spec folder.
+- If they provide a spec folder name (e.g., `user-auth`), proceed to Step 2 using that name.
+- If they want to create a new spec, stop this skill and invoke the `create-spec` skill to run the spec creation workflow. Once the spec is created, resume from Step 2 with the newly created spec folder.
 
 ---
 
-## Step 1: Find the spec
+## Step 2: Find the spec
 
 Check if the user provided a spec path or the name of the spec folder (e.g., `specs/user-auth/SPEC.md` or `user-auth`).
 
@@ -36,7 +44,7 @@ Check if the user provided a spec path or the name of the spec folder (e.g., `sp
 
 ---
 
-## Step 2: Read the spec
+## Step 3: Read the spec
 
 Read the SPEC.md fully. Extract and note:
 
@@ -50,7 +58,7 @@ If the spec is too vague to plan against (missing acceptance criteria, unclear s
 
 ---
 
-## Step 3: Explore the codebase (read-only)
+## Step 4: Explore the codebase (read-only)
 
 Before writing anything, explore the codebase to ground the plan in reality. The goal is to answer: *what actually needs to change, and where?*
 
@@ -71,7 +79,7 @@ If you discover gotchas, surprises, or non-obvious constraints during exploratio
 
 ---
 
-## Step 4: Generate the plan
+## Step 5: Generate the plan
 
 1. Read the template from `assets/PLAN-TEMPLATE.md` in this skill's directory. This tells you the structure and contains inline guidance for each section.
 
@@ -89,7 +97,7 @@ The template contains inline guidance in a comment block at the top — read it 
 
 ---
 
-## Step 5: Tell the user
+## Step 6: Tell the user
 
 Once the plan is written, surface any open questions directly in your message — don't just say "see the plan":
 
@@ -107,13 +115,13 @@ Once the plan is written, surface any open questions directly in your message �
 >
 > You can reply with `[I]` to begin implementation now — the plan is valid as-is — but the parts that depend on the open questions above may need revision once answered.
 
-Then stop and wait. Update the plan when the user answers (see Step 6).
+Then stop and wait. Update the plan when the user answers (see Step 7).
 
 > ⚠️ **Context tip:** If you've been in this conversation a while, consider opening a fresh chat before implementing. Long conversations accumulate noise. Just mention the plan path and continue from there.
 
 ---
 
-## Step 6: Handle user answers to open questions
+## Step 7: Handle user answers to open questions
 
 When the user answers one or more open questions:
 

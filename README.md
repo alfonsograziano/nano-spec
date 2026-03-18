@@ -12,11 +12,13 @@ nano-spec keeps specs short enough to actually write and read, and asks clarifyi
 
 ## How it works
 
-Three skills:
+Four skills:
 
 ```
-Specify → Plan → Implement
+(Constitution →) Specify → Plan → Implement
 ```
+
+**`create-constitution`** *(optional but recommended)*: Scans your project and creates a `CONSTITUTION.md` with the tech stack, sanity check commands, conventions, key files, and hard rules. Every other skill reads this automatically, so setting it up once improves all future specs and implementations.
 
 **`create-spec`**: Describe what you want to build. The skill asks a few questions to nail down who it's for, what done looks like, and what's out of scope. Saves the result as `SPEC.md`.
 
@@ -38,6 +40,7 @@ Requires an agent that supports the [Skills standard](https://agentskills.io/hom
 
 ```
 specs/
+  CONSTITUTION.md              # Project-wide context for all skills
   my-feature/
     SPEC.md                    # What to build and why
     PLAN.md                    # How to build it

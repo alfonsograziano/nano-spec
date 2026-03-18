@@ -38,7 +38,7 @@ Wait for the user's answer:
 
 Check if the user provided a spec path or the name of the spec folder (e.g., `specs/user-auth/SPEC.md` or `user-auth`).
 
-- If yes, proceed to Step 2.
+- If yes, proceed to Step 3.
 - If no, prompt the user and ask which one to plan:
   > "Which spec would you like to plan? Please provide the path (e.g., `specs/user-auth/SPEC.md`) or the name of the spec folder (e.g., `user-auth`)."
 

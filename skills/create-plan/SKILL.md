@@ -91,7 +91,7 @@ The template contains inline guidance in a comment block at the top — read it 
 
 4. Before saving the final file, do a self-review pass:
    - Remove all placeholder instructions — italic hints, the HTML comment block, and any other template scaffolding that isn't real content
-   - Remove sections that ended up empty — **except Open Questions**, which should stay even if some remain unanswered
+   - Remove sections that ended up empty (including Open Questions if there are none)
    - Verify every file path in Technical Notes is either a real file you found or is labeled "new file"
    - Confirm every task has a binary `Done when:` check
    - Check that the plan reads as a clean document an engineer can pick up and act on — no ghost instructions, no leftover template noise

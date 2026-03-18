@@ -9,9 +9,9 @@ INSTRUCTIONS FOR THE AGENT (remove this block before saving the final plan):
 - Approach: what and how, specifically. 2–5 sentences. No vague summaries — name the files, functions, and mechanisms. If something couldn't be determined, say so and point to Open Questions.
 - Trade-offs: only include if real choices were made. Name both options and explain the decision. Skip the section if the approach was obvious.
 - Tasks: atomic, ordered by dependency, each with a "Done when:" binary check. Reference the specific file or function being changed. Tag each task with the AC numbers it covers (e.g. "AC 1, 3"). If a task is blocked on an open question, note "⚠️ Blocked on Q1."
-- Open Questions: things you couldn't determine during exploration. Number them Q1, Q2... State what each question blocks. Remove once resolved. Keep this section even if the plan is otherwise complete.
+- Open Questions: things you couldn't determine during exploration. Number them Q1, Q2... State what each question blocks. Remove resolved questions. If no open questions remain, remove the section entirely.
 - Technical Notes: for the implementation agent. Every file path must be real (confirmed by exploration) or explicitly labeled "new file".
-- Remove sections that don't apply — except Open Questions, which should remain if any are unanswered.
+- Remove sections that don't apply.
 - The human-readable part (Approach + Trade-offs + Tasks + Open Questions) should be readable in under 5 minutes.
 -->
 
@@ -42,7 +42,7 @@ _Ordered checkbox list. Each task is atomic, named (references the specific file
 
 ## Open Questions
 
-_Things that couldn't be determined during exploration. Each question is numbered, specific, and states what it affects. Remove individual questions once resolved. Remove this section entirely only if everything was answered._
+_Things that couldn't be determined during exploration. Each question is numbered, specific, and states what it affects. Remove resolved questions. If no open questions remain, remove this section entirely._
 
 | # | Question | Affects | Owner | Status |
 |---|----------|---------|-------|--------|

@@ -87,6 +87,12 @@ If there's no PLAN.md, implement the spec requirements in a logical order — de
 
 **Parallelism:** Before starting, scan the task list for groups of tasks that are fully independent — no shared files, no ordering dependency between them. If the Agent tool is available to you, spawn those groups as parallel subagents to speed up implementation. Tasks that share files or depend on each other's output must still run sequentially. Each subagent should report back its completed task IDs and any notes; you then check them off in PLAN.md and merge notes into IMPLEMENTATION-NOTES.md.
 
+**When a task is impossible or blocked:** If a task cannot be completed (a dependency is missing, a required file doesn't exist, the approach turns out to be wrong), do not guess or force it. Instead:
+1. Record why it's impossible in IMPLEMENTATION-NOTES.md under "Remaining Work", with as much detail as you have.
+2. If the task is not a blocker for others, skip it and continue with the remaining tasks.
+3. If the task blocks one or more subsequent tasks, skip those dependent tasks too and note them as blocked.
+4. Once all unblocked tasks are done (or if the very first task is a hard blocker), stop and go to Step 9 — do not attempt sanity checks on a partially broken implementation.
+
 **Avoid over-engineering.** Implement exactly what the spec/plan describes. Don't refactor unrelated code, add extra abstractions, or "improve" things not in scope. If you notice something worth fixing that's out of scope, note it in IMPLEMENTATION-NOTES.md under "Out of Scope Observations" rather than changing it.
 
 ---
@@ -170,5 +176,13 @@ Once implementation is complete, report back:
 > - [ ] [criteria 3 — if anything is unmet, explain why]
 
 If any acceptance criteria were not met, explain clearly what's missing and whether it's a blocker or a known gap.
+
+If any tasks were skipped because they were impossible, list them explicitly and ask the user for guidance:
+
+> **Blocked tasks requiring your input:**
+> - **[Task name]** — [why it was impossible, what's missing]
+> - **[Task name]** — [blocked by the above]
+>
+> Please let me know how to proceed on these before I continue.
 
 Then stop and wait. Do not make additional changes unless the user asks.

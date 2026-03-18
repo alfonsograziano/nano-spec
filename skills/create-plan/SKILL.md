@@ -73,7 +73,7 @@ After exploration, you should be able to name specific real files — not hypoth
 
 1. Read the template from `assets/PLAN-TEMPLATE.md` in this skill's directory. This tells you the structure and contains inline guidance for each section.
 
-2. Use a terminal command to copy `assets/PLAN-TEMPLATE.md` into `specs/<folder-name>/PLAN.md` (same folder as the SPEC.md). Then fill it in with everything you learned from exploration — do not create a second file.
+2. Copy `assets/PLAN-TEMPLATE.md` into `specs/<folder-name>/PLAN.md` (same folder as the SPEC.md) — use `cp` on Unix/Mac, `copy` on Windows, or any equivalent terminal command available. If no terminal is available, read the template and recreate the file faithfully using your file write tool, preserving the structure exactly. Then fill it in with everything you learned from exploration — do not create a second file.
 
 The template contains inline guidance in a comment block at the top — read it before filling in the plan. Follow those instructions, then remove the comment block before saving.
 

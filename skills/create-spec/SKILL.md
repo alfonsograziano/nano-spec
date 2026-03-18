@@ -68,7 +68,7 @@ Do not ask the user to confirm the folder name unless you are genuinely unsure. 
 
 2. Create the folder `specs/<folder-name>/` in the project root (create `specs/` too if it doesn't exist).
 
-3. Use a terminal command to copy `assets/SPEC-TEMPLATE.md` into `specs/<folder-name>/SPEC.md`. Then fill it in with everything you learned from the conversation — do not create a second file.
+3. Copy `assets/SPEC-TEMPLATE.md` into `specs/<folder-name>/SPEC.md` — use `cp` on Unix/Mac, `copy` on Windows, or any equivalent terminal command available. If no terminal is available, read the template and recreate the file faithfully using your file write tool, preserving the structure exactly. Then fill it in with everything you learned from the conversation — do not create a second file.
 
 The template (`assets/SPEC-TEMPLATE.md`) contains inline guidance for each section — read it before filling in the spec. Follow the instructions in the template's comment block at the top, then remove that block before saving.
 

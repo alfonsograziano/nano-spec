@@ -44,7 +44,20 @@ Check if the user provided a spec path or the name of the spec folder (e.g., `sp
 
 ---
 
-## Step 3: Read the spec
+## Step 3: Check for an existing plan
+
+Check if `specs/<folder-name>/PLAN.md` already exists.
+
+- If it doesn't exist, proceed to Step 4.
+- If it already exists, ask the user:
+  > "A plan already exists at `specs/<folder-name>/PLAN.md`. Do you want to replace it from scratch, or update specific sections?"
+
+  - If replacing: proceed to Step 4.
+  - If updating: read the existing plan, then focus exploration (Step 5) only on the sections the user wants updated.
+
+---
+
+## Step 4: Read the spec
 
 Read the SPEC.md fully. Extract and note:
 
@@ -58,7 +71,7 @@ If the spec is too vague to plan against (missing acceptance criteria, unclear s
 
 ---
 
-## Step 4: Explore the codebase (read-only)
+## Step 5: Explore the codebase (read-only)
 
 Before writing anything, explore the codebase to ground the plan in reality. The goal is to answer: *what actually needs to change, and where?*
 
@@ -79,7 +92,7 @@ If you discover gotchas, surprises, or non-obvious constraints during exploratio
 
 ---
 
-## Step 5: Generate the plan
+## Step 6: Generate the plan
 
 1. Read `assets/PLAN-TEMPLATE.md` from this skill's directory. This tells you the structure and contains inline guidance for each section.
 
@@ -99,7 +112,7 @@ The template contains inline guidance in a comment block at the top — read it 
 
 ---
 
-## Step 6: Tell the user
+## Step 7: Tell the user
 
 Once the plan is written, surface any open questions directly in your message — don't just say "see the plan":
 
@@ -117,13 +130,13 @@ Once the plan is written, surface any open questions directly in your message �
 >
 > You can reply with `[I]` to begin implementation now — the plan is valid as-is — but the parts that depend on the open questions above may need revision once answered.
 
-Then stop and wait. Update the plan when the user answers (see Step 7).
+Then stop and wait. Update the plan when the user answers (see Step 8).
 
 > ⚠️ **Context tip:** If you've been in this conversation a while, consider opening a fresh chat before implementing. Long conversations accumulate noise. Just mention the plan path and continue from there.
 
 ---
 
-## Step 7: Handle user answers to open questions
+## Step 8: Handle user answers to open questions
 
 When the user answers one or more open questions:
 

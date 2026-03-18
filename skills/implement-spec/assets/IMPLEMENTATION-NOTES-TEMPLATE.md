@@ -75,6 +75,16 @@ _Things you noticed in the codebase that are worth flagging but were not changed
 
 ---
 
+## Steering
+
+_User feedback received after the initial implementation. Each entry records what the user asked for and what changed in the code as a result._
+
+| # | User feedback | Changes made |
+|---|---------------|--------------|
+|   |               |              |
+
+---
+
 ## Remaining Work
 
 _Anything intentionally left incomplete, follow-up tasks, or gaps between what was implemented and the acceptance criteria._

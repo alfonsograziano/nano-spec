@@ -182,3 +182,16 @@ If during implementation you discovered something worth adding to `specs/CONSTIT
 > **Constitution update:** I noticed [observation] during implementation. Would you like me to add this to `specs/CONSTITUTION.md`?
 
 Then stop and wait. Do not make additional changes unless the user asks.
+
+---
+
+## Step 11: Handle steering feedback
+
+After seeing the initial implementation, the user may provide feedback — corrections, adjustments, or refinements. When this happens:
+
+1. **Make the requested changes** in the codebase.
+2. **Log the feedback** in the Steering section of `IMPLEMENTATION-NOTES.md`: record what the user asked for and what you changed.
+3. **Re-run sanity checks** if the changes are non-trivial, and update the Sanity Checks section if results changed.
+4. **Report back briefly** — summarize what changed, no need to repeat the full Step 10 report.
+
+This cycle can repeat as many times as needed. Each round of feedback gets its own row in the Steering table, building a clear trail of how the implementation evolved after the first pass.

@@ -32,13 +32,7 @@ At each step, the agent pauses for your review before moving on.
 npx skills add alfonsograziano/nano-spec
 ```
 
-No configuration. Works with any AI agent that supports the [Skills standard](https://github.com/anthropics/claude-code/blob/main/docs/skills.md).
-
-## Why bother
-
-When you skip the spec, the agent fills in what's missing by guessing. It picks whatever pattern showed up most in training, not whatever's right for your codebase. The code looks fine, might even pass a quick test, but it's solving a slightly different problem than the one you had.
-
-Specs don't have to be long. That's kind of the whole point of this project.
+Requires an agent that supports the [Skills standard](https://agentskills.io/home). No other configuration needed.
 
 ## What you get
 

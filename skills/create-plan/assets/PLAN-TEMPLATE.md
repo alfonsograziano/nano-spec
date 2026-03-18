@@ -63,8 +63,8 @@ _Implementation reference for the agent — not required reading for humans. Rea
 
 ### Key references
 
-- [variable/function name]: `path/to/file.ts:line`
-- Follow the pattern in: `path/to/example.ts`
+- [variable/function name]: `path/to/file.ts#functionName`
+- Follow the pattern in: `path/to/example.ts#handlerName`
 - Config key: `ENV_VAR_NAME` (used in `path/to/config.ts`)
 
 ### Commands

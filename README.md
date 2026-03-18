@@ -56,11 +56,25 @@ Plain Markdown. Nothing to install, nothing to configure beyond the skills thems
 - The agent pauses between phases. You decide when to move forward.
 - No lock-in. The skills standard is open, works with any compatible agent.
 
+## FAQ
+
+**What if the agent doesn't trigger the skill?**
+Try invoking it explicitly (e.g., `/create-spec`). If that doesn't work, check that the skills were installed correctly with `npx skills add alfonsograziano/nano-spec`.
+
+**What if a spec already exists for this feature?**
+`create-spec` will detect it and ask whether you want to update the existing spec or create a new one.
+
+**What if implementation fails halfway?**
+Just re-run `implement-spec` on the same spec folder. It detects already-checked-off tasks in `PLAN.md` and resumes from the first unchecked task.
+
+**Do I need to create a constitution first?**
+No, but it helps. The constitution gives every skill project-wide context (sanity checks, conventions, rules). Without it, the agent has to discover these things each time.
+
 ## The book
 
 I'm writing a book on Spec-Driven Development with O'Reilly. The first Early Release chapters are coming out soon.
 
-If you want to follow along, there's a free newsletter: [alfonsograziano.it/book](http://alfonsograziano.it/book)
+If you want to follow along, there's a free newsletter: [alfonsograziano.it/book](https://alfonsograziano.it/book)
 
 ## License
 

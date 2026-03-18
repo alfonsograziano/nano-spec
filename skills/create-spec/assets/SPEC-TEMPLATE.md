@@ -20,7 +20,7 @@ INSTRUCTIONS FOR THE AGENT (remove this block before saving the final spec):
 
 ## User input
 
-_Paste here the initial user input request for future reference_
+_Verbatim copy of everything the user said that is relevant to this spec — across one or more messages if needed. Do not paraphrase or summarize. Preserve the original wording as closely as possible._
 
 ---
 

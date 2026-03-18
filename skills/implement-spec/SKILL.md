@@ -56,7 +56,7 @@ If `PLAN.md` is missing, note this — you'll implement based on the spec direct
 Before writing any code, read what you loaded and form a clear picture:
 
 - What are the acceptance criteria? These are your definition of done.
-- If there's a PLAN.md, what are the tasks and their order? Are any blocked on open questions?
+- If there's a PLAN.md, what are the tasks and their order? Are any blocked on open questions? If some tasks are already checked off (`- [x]`), this is a resumed implementation — skip those and start from the first unchecked task (`- [ ]`).
 - What files need to change? (Reference the Technical Notes in PLAN.md if present, or explore the codebase if not.)
 - Are there open questions in the plan that would block implementation? If so, surface them to the user now rather than guessing:
   > "Before I start, I need your input on: [Q1 from plan]. This affects [what it blocks]."

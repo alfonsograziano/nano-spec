@@ -2,6 +2,10 @@
 
 A minimal, hackable implementation of Spec-Driven Development. Write a short spec, then let an AI agent implement it.
 
+## Video walkthrough
+
+[![nano-spec walkthrough](https://img.youtube.com/vi/_l_ssxB-Ht0/maxresdefault.jpg)](https://youtu.be/_l_ssxB-Ht0)
+
 ## The problem
 
 Most specs are too long. Nobody reads them, so people skip writing specs and just describe what they want in a prompt.

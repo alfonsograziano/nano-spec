@@ -83,3 +83,6 @@ If you want to follow along, there's a free newsletter: [alfonsograziano.it/book
 ## License
 
 MIT
+
+## Sponsor
+Project kindly sponsored by [Nearform](https://nearform.com/)
